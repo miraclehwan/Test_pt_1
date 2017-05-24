@@ -70,6 +70,7 @@ public class Main extends GVRMain{
                 if (mGVRContext.getMainScene().getClass().equals(Scene_Login.class)){
                     if (PickHandler_Login.PickedObject !=null && PickHandler_Login.PickedObject.getName().equals("Join")){
                         try {
+                            PickHandler_Login.PickedObject = null;
                             Scene_Join scene_join = new Scene_Join(mGVRContext);
                             setJoinscene(scene_join);
                         } catch (IOException e) {
@@ -81,6 +82,7 @@ public class Main extends GVRMain{
                     Log.e("Scene Join : ", "Join True");
                     if (PickHandler_Join.PickedObject !=null && PickHandler_Join.PickedObject.getName().equals("Join_Join")){
                         try {
+                            PickHandler_Join.PickedObject = null;
                             Scene_Login scene_login = new Scene_Login(mGVRContext);
                             setMainscene(scene_login);
                         } catch (IOException e) {
