@@ -62,9 +62,10 @@ public class Main extends GVRMain{
         getGVRContext().setMainScene(newScene);
     }
 
+
     public void onTouchEvent(MotionEvent event){
         switch (event.getAction() & MotionEvent.ACTION_MASK){
-            case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_UP:
                 Log.e("Scene status : ", mGVRContext.getMainScene().getClass().toString());
                 if (mGVRContext.getMainScene().getClass().equals(Scene_Login.class)){
                     if (PickHandler_Login.PickedObject !=null && PickHandler_Login.PickedObject.getName().equals("Join")){
@@ -76,9 +77,16 @@ public class Main extends GVRMain{
                         }
                     }
                     Log.e("Scene Login : ", "Login True");
-                }
-                if (mGVRContext.getMainScene().getClass().equals(Scene_Join.class)){
+                }else if (mGVRContext.getMainScene().getClass().equals(Scene_Join.class)){
                     Log.e("Scene Join : ", "Join True");
+                    if (PickHandler_Join.PickedObject !=null && PickHandler_Join.PickedObject.getName().equals("Join_Join")){
+                        try {
+                            Scene_Login scene_login = new Scene_Login(mGVRContext);
+                            setMainscene(scene_login);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
                 break;
             default:

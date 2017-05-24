@@ -30,7 +30,7 @@ public class Scene_Join extends GVRScene{
         headTracker.getRenderData().setRenderingOrder(10000);
         getMainCameraRig().addChildObject(headTracker);
 
-        GVRSceneObject title = makeTitle(gvrContext, "Join", 4.0f, 2.0f, Color.RED, Color.YELLOW, 0.0f, 0.0f, -3.0f);
+        GVRSceneObject title = makeTitle(gvrContext, "Join_Join", 4.0f, 2.0f, Color.RED, Color.YELLOW, 0.0f, 0.0f, -3.0f);
         addSceneObject(title);
 
 
